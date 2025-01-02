@@ -13,7 +13,7 @@ public class GameModes : MonoBehaviour
     public TextMeshProUGUI timerText, gameMode;
 
     private float timer;
-    public static bool isGameRunning = false;
+    public  bool isGameRunning = false;
 
     void Start()
     {

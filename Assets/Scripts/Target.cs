@@ -12,11 +12,12 @@ public class Target : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Projectile"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-
             scoringSystem.AddScore(points);
             Destroy(gameObject, 3);
         }
+
+        
     }
 }

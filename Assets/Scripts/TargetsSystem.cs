@@ -8,9 +8,11 @@ public class TargetsSystem : MonoBehaviour
     public Transform[] spawnPoints;  
     public float spawnInterval = 2f; 
     public float hideTarget;
+    GameModes gameMode;
 
     void Start()
     {
+        gameMode=FindObjectOfType<GameModes>();
         StartCoroutine(SpawnTargets());
     }
 
@@ -18,7 +20,7 @@ public class TargetsSystem : MonoBehaviour
     {
         while (true)
         {
-            if (GameModes.isGameRunning)
+            if (gameMode.isGameRunning)
             {
                 SpawnTarget();
                 yield return new WaitForSeconds(spawnInterval);

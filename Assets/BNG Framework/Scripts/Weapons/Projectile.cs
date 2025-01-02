@@ -23,6 +23,13 @@ namespace BNG {
 
         public bool StickToObject = false;
 
+
+
+        //public int points = 10; 
+        //public ScoringSystem scoringSystem;
+
+
+
         /// <summary>
         /// Minimum Z velocity required to register as an impact
         /// </summary>
@@ -33,6 +40,12 @@ namespace BNG {
 
         private void OnCollisionEnter(Collision collision) {
             OnCollisionEvent(collision);
+            //if (collision.gameObject.CompareTag("Item"))
+            //{
+            //    scoringSystem = FindObjectOfType<ScoringSystem>();
+            //    scoringSystem.AddScore(points);
+            //    Destroy(gameObject, 3);
+            //}
         }
 
         public virtual void OnCollisionEvent(Collision collision) {
@@ -128,6 +141,10 @@ namespace BNG {
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        
     }
+
+   
 }
 
