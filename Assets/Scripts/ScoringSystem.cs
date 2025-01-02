@@ -12,6 +12,7 @@ public class ScoringSystem : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
+        //scoreText.text = "Score: " + score;
         UpdateScoreUI();
     }
 
@@ -21,5 +22,11 @@ public class ScoringSystem : MonoBehaviour
         {
             scoreText.text = "Score: " + score;
         }
+    }
+
+    private void Update()
+    {
+            scoreText.text = "Score: " + score;
+
     }
 }

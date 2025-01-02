@@ -18,20 +18,19 @@ public class TargetsSystem : MonoBehaviour
     {
         while (true)
         {
-
-            SpawnTarget();
-            yield return new WaitForSeconds(spawnInterval);
+            if (GameModes.isGameRunning)
+            {
+                SpawnTarget();
+                yield return new WaitForSeconds(spawnInterval);
+            }
+           
         }
-        //if (GameModes.isGameRunning)
-        //{
-        //    SpawnTarget();
-        //    yield return new WaitForSeconds(spawnInterval);
-        //}
+       
     }
 
     void SpawnTarget()
     {
-        if (GameModes.isGameRunning==false) return;
+        //if (GameModes.isGameRunning==false) return;
     
         int randomIndex = Random.Range(0, targetPrefabs.Length);
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
@@ -39,7 +38,9 @@ public class TargetsSystem : MonoBehaviour
 
         GameObject newTarget = Instantiate(targetPrefabs[randomIndex], spawnPoints[spawnPointIndex].position, Quaternion.identity);
         Destroy(newTarget, hideTarget);
+        //Destroy(Instantiate(targetPrefabs[randomIndex], spawnPoints[spawnPointIndex].position, Quaternion.identity), hideTarget);
 
 
     }
+
 }

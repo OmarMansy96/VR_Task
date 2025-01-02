@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class GameModes : MonoBehaviour
 {
-    public enum Mode { Timed, Endless }
-    public Mode currentMode;
+    enum Mode { Timed, Endless }
+    Mode currentMode;
 
     public float timedDuration = 60f;
     public TextMeshProUGUI timerText, gameMode;

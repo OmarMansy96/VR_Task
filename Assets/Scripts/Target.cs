@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public int points = 10; // Points for hitting this target
+    public int points = 10; 
     public ScoringSystem scoringSystem;
 
     void Start()
@@ -14,8 +14,9 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
+
             scoringSystem.AddScore(points);
-            Destroy(gameObject,3); // Remove the target
+            Destroy(gameObject, 3);
         }
     }
 }
